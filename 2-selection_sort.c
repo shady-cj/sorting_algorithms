@@ -18,7 +18,6 @@ void selection_sort(int *array, size_t size)
 	while (i < size)
 	{
 		sm_index = i;
-		
 		j = i + 1;
 		while (j < size)
 		{
