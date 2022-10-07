@@ -39,10 +39,13 @@ void insertion_sort_list(listint_t **list)
 				previous_ptr = present_ptr;
 				print_list(*list);
 			}
+			else
+			{
+				break;
+			}
 			present_ptr = previous_ptr;
 			previous_ptr = previous_ptr->prev;
 		}
-		*list = present_ptr;
 		ptr = ptr->next;
 	}
 }
