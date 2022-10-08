@@ -19,14 +19,14 @@ ssize_t partition(int *array, ssize_t st, ssize_t end, size_t size)
 
 	pivot = end;
 	i = st;
-	j = end;
+	j = end - 1;
 	while (i < j)
 	{
 		if (array[i] <= array[pivot])
 		{
 			i++;
 		}
-		else if (array[j] >= array[pivot])
+		else if (array[j] > array[pivot])
 		{
 			j--;
 		}
@@ -38,12 +38,15 @@ ssize_t partition(int *array, ssize_t st, ssize_t end, size_t size)
 			print_array(array, size);
 		}
 	}
-	pl = array[i];
-	array[i] = array[pivot];
-	array[pivot] = pl;
-	if (i != pivot)
+	if (array[i] > array[pivot])
+	{
+		pl = array[i];
+		array[i] = array[pivot];
+		array[pivot] = pl;
 		print_array(array, size);
-	return (i);
+		return (i);
+	}
+	return (pivot);
 }
 
 
