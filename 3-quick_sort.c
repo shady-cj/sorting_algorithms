@@ -6,7 +6,7 @@
  * array an place a picked pivot using lomuto
  * partition scheme in its sorted position
  * @array: The array
- * @start: The start index
+ * @st: The start index
  * @end: The end index
  * @size: The size of the array this is required
  * for printing the array at every swap
@@ -82,9 +82,9 @@ void sort(int *array, ssize_t lo, ssize_t hi, size_t size)
  * @array: Array of numbers to be sorted
  * @size: The size of the array
  */
-
-
 void quick_sort(int *array, size_t size)
 {
+	if (!array || size == 0)
+		return;
 	sort(array, 0, (size - 1), size);
 }
