@@ -1,5 +1,13 @@
 #include "sort.h"
 
+/**
+ * struct k_gap_s - defining a doubly linked list
+ * struct for the knuth_gap sequence
+ * @n: The number in the sequence
+ * @next: The next element in the linked list
+ * @prev: The previous element in the list
+ */
+
 typedef struct k_gap_s {
 	size_t n;
 	struct k_gap_s *next;
