@@ -56,6 +56,8 @@ void shell_sort(int *array, size_t size)
 	ssize_t prev;
 	int pl;
 
+	if (array == NULL || size == 0)
+		return;
 	ptr = knuth_gap(size);
 	while (ptr)
 	{
