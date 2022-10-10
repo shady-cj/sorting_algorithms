@@ -6,6 +6,7 @@
  * @array: The array to be sorted
  * @lo: The start
  * @hi: The end
+ * Return: A copy of The sorted array
  */
 int *merge(int *array, ssize_t lo, ssize_t hi)
 {
@@ -49,7 +50,7 @@ int *merge(int *array, ssize_t lo, ssize_t hi)
 }
 /**
  * merge_sort - Sorting array using merge sort
- * @array - The array to be sorted
+ * @array: The array to be sorted
  * @size: The size of the array
  */
 void merge_sort(int *array, size_t size)
