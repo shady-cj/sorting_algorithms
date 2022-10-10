@@ -41,4 +41,6 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
+k_gap_t *knuth_gap(size_t size);
+void free_gap(k_gap_t *head);
 #endif
