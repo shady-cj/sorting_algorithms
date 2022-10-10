@@ -38,4 +38,6 @@ void counting_sort(int *array, size_t size)
 		count_array[id]--;
 		array[count_array[id]] = id;
 	}
+	free(array_copy);
+	free(count_array);
 }
