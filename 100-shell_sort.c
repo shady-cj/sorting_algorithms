@@ -1,5 +1,26 @@
 #include "sort.h"
 
+
+/**
+ * free_gap - Freeing the knuth gap sequence
+ * linked list
+ * @head: The pointer to the head of the linked
+ * list
+ */
+
+
+void free_gap(k_gap_t *head)
+{
+	k_gap_t *ptr;
+
+	ptr = head;
+	while (head)
+	{
+		head = ptr->next;
+		free(ptr);
+		ptr = head;
+	}
+}
 /**
  * knuth_gap - Implementing knuth gap sequence
  * @size: The size of the array
@@ -44,10 +65,9 @@ k_gap_t *knuth_gap(size_t size)
 
 void shell_sort(int *array, size_t size)
 {
-	k_gap_t *ptr;
+	k_gap_t *ptr, *prev_ptr;
 	size_t i, j, cur;
-	ssize_t prev;
-	int pl;
+	int prev, pl;
 
 	if (array == NULL || size == 0)
 		return;
@@ -57,7 +77,7 @@ void shell_sort(int *array, size_t size)
 		i = 0;
 		while (i < ptr->n)
 		{
-			j = i;
+			j = i++;
 			while (j < size)
 			{
 				cur = j;
@@ -79,9 +99,10 @@ void shell_sort(int *array, size_t size)
 				}
 				j += ptr->n;
 			}
-			i++;
 		}
+		prev_ptr = ptr;
 		ptr = ptr->prev;
 		print_array(array, size);
 	}
+	free_gap(prev_ptr);
 }
