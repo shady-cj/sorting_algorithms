@@ -47,4 +47,5 @@ void sort(int *array, ssize_t lo, ssize_t hi, size_t size);
 ssize_t partition(int *array, ssize_t st, ssize_t end, size_t size);
 
 void cocktail_sort_list(listint_t **list);
+void counting_sort(int *array, size_t size);
 #endif
