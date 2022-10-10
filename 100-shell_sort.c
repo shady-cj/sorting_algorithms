@@ -69,7 +69,7 @@ void shell_sort(int *array, size_t size)
 	size_t i, j, cur;
 	int prev, pl;
 
-	if (array == NULL || size == 0)
+	if (array == NULL || size < 2)
 		return;
 	ptr = knuth_gap(size);
 	while (ptr)
