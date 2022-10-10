@@ -16,6 +16,24 @@ typedef struct listint_s
 	struct listint_s *prev;
 	struct listint_s *next;
 } listint_t;
+
+
+
+/**
+ * struct k_gap_s - defining a doubly linked list
+ * struct for the knuth_gap sequence
+ * @n: The number in the sequence
+ * @next: The next element in the linked list
+ * @prev: The previous element in the list
+ */
+
+typedef struct k_gap_s 
+{
+	size_t n;
+	struct k_gap_s *next;
+	struct k_gap_s *prev;
+} k_gap_t;
+
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
