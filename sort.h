@@ -27,7 +27,7 @@ typedef struct listint_s
  * @prev: The previous element in the list
  */
 
-typedef struct k_gap_s 
+typedef struct k_gap_s
 {
 	size_t n;
 	struct k_gap_s *next;
