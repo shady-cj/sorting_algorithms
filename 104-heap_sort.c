@@ -5,7 +5,7 @@
  * heapify - An helper function that heapify
  * @array: The array to be heapified
  * @size: The total size of the array
- * @length: The length of the heap 
+ * @length: The length of the heap
  * @node: The current node
  * Return: void
  */
