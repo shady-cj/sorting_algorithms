@@ -13,6 +13,7 @@
 void heapify(int *array, int node, size_t length, size_t size)
 {
 	int left, right, switch_node, pholder;
+
 	right = node * 2;
 	left = right - 1;
 	if ((size_t)left >= length)
@@ -44,7 +45,6 @@ void heap_sort(int *array, size_t size)
 	size_t i;
 
 	i = size;
-
 	while (i > 1)
 	{
 		node = i / 2;
