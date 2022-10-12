@@ -39,6 +39,7 @@ void bitonicMerge(int *array, size_t lo, size_t hi,
  * the array to turn into bitonic sequence
  * @lo: The starting index
  * @hi: The new high
+ * @array: The array
  * @size: The size of the array
  * @dir: The direction of the array 1 for ascending
  * and 0 for descending
