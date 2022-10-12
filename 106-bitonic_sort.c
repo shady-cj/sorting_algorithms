@@ -56,9 +56,9 @@ void bitonicSort(int *array, size_t lo, size_t hi,
 	for (i = 0; i < (hi - lo); i++)
 		new_arr[i] = array[i + lo];
 	if (dir)
-		printf("Merging [%u/%u] (UP):\n", hi - lo, size);
+		printf("Merging [%lu/%lu] (UP):\n", hi - lo, size);
 	else
-		printf("Merging [%u/%u] (DOWN):\n", hi - lo, size);
+		printf("Merging [%lu/%lu] (DOWN):\n", hi - lo, size);
 	print_array(new_arr, (hi - lo));
 	bitonicSort(array, lo, mid, size, 1);
 	bitonicSort(array, mid, hi, size, 0);
@@ -66,9 +66,9 @@ void bitonicSort(int *array, size_t lo, size_t hi,
 	for (i = 0; i < (hi - lo); i++)
 		new_arr[i] = array[i + lo];
 	if (dir)
-		printf("Result [%u/%u] (UP):\n", hi - lo, size);
+		printf("Result [%lu/%lu] (UP):\n", hi - lo, size);
 	else
-		printf("Result [%u/%u] (DOWN):\n", hi - lo, size);
+		printf("Result [%lu/%lu] (DOWN):\n", hi - lo, size);
 	print_array(new_arr, (hi - lo));
 	free(new_arr);
 }
