@@ -18,25 +18,35 @@ ssize_t partition(int *array, ssize_t st, ssize_t end, size_t size)
 	int pl;
 
 	pivot = end;
-	j = st;
-	i = j - 1;
-	while (j < pivot)
+	i = st;
+	j = end - 1;
+	while (i < j)
 	{
-		if (array[j] <= array[pivot])
+		if (array[i] <= array[pivot])
 		{
 			i++;
-			pl = array[i];
-			array[i] = array[j];
-			array[j] = pl;
+		}
+		else if (array[j] > array[pivot])
+		{
+			j--;
+		}
+		else
+		{
+			pl = array[j];
+			array[j] = array[i];
+			array[i] = pl;
 			print_array(array, size);
 		}
-		j++;
 	}
-	pl = array[i + 1];
-	array[i + 1] = array[pivot];
-	array[pivot] = pl;
-	print_array(array, size);
-	return (i + 1);
+	if (array[i] > array[pivot])
+	{
+		pl = array[i];
+		array[i] = array[pivot];
+		array[pivot] = pl;
+		print_array(array, size);
+		return (i);
+	}
+	return (pivot);
 }
 
 
