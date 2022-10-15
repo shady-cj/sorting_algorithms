@@ -63,7 +63,7 @@ void cocktail_sort_list(listint_t **list)
 	int sorted = 0;
 	size_t size = 0, i;
 
-	if (*list == NULL)
+	if (list == NULL)
 		return;
 	ptr = *list;
 	while (ptr)
