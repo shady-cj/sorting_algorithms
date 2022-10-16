@@ -19,8 +19,8 @@ ssize_t partition(int *array, ssize_t st, ssize_t end, size_t size)
 
 	pivot = end;
 	i = st;
-	j = end - 1;
-	while (i < j)
+	j = end;
+	while (i <= j)
 	{
 		if (array[i] <= array[pivot])
 		{
@@ -33,20 +33,22 @@ ssize_t partition(int *array, ssize_t st, ssize_t end, size_t size)
 		else
 		{
 			pl = array[j];
+			if (pivot == j)
+				pivot = i;
+			else if (pivot == i)
+				pivot = j;
 			array[j] = array[i];
 			array[i] = pl;
-			print_array(array, size);
+			if (i != j)
+				print_array(array, size);
 		}
 	}
-	if (array[i] > array[pivot])
-	{
-		pl = array[i];
-		array[i] = array[pivot];
-		array[pivot] = pl;
+	pl = array[j];
+	array[j] = array[pivot];
+	array[pivot] = pl;
+	if (j != pivot)
 		print_array(array, size);
-		return (i);
-	}
-	return (pivot);
+	return (j);
 }
 
 
@@ -80,7 +82,7 @@ void sort(int *array, ssize_t lo, ssize_t hi, size_t size)
  * @array: Array of numbers to be sorted
  * @size: The size of the array
  */
-void quick_sort(int *array, size_t size)
+void quick_sort_hoare(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
