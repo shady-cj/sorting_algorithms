@@ -77,7 +77,7 @@ void sort(int *array, ssize_t lo, ssize_t hi, size_t size)
 
 
 /**
- * quick_sort - Implementation of the quick sort
+ * quick_sort_hoare - Implementation of the quick sort
  * algorithm to sort an array of numbers
  * @array: Array of numbers to be sorted
  * @size: The size of the array
