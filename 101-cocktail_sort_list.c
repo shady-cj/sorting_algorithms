@@ -60,8 +60,7 @@ void swap_backward(listint_t **current, listint_t **head)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *ptr, *shaker;
-	int sorted = 0;
-	size_t size = 0, i;
+	size_t size = 0, sorted, i;
 
 	if (list == NULL)
 		return;
