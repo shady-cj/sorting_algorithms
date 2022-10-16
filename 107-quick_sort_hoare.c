@@ -39,8 +39,7 @@ ssize_t partition(int *array, ssize_t st, ssize_t end, size_t size)
 				pivot = j;
 			array[j] = array[i];
 			array[i] = pl;
-			if (i != j)
-				print_array(array, size);
+			print_array(array, size);
 		}
 	}
 	pl = array[j];
